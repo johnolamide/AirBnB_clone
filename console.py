@@ -14,11 +14,11 @@ class HBNBCommand(cmd.Cmd):
             do_quit(self, arg): quit the commandline
             do_EOF(self, arg): handles EOF
             emptyline(self): ignores emptyline command
-            do_create(self, arg):
-            do_show(self, arg):
-            do_destroy(self, arg):
-            do_all(self, arg):
-            do_update(self, arg):
+            do_create(self, arg): create a new instance
+            do_show(self, arg): show the instance properties using it's id
+            do_destroy(self, arg): destroys an instance
+            do_all(self, arg): return all instances
+            do_update(self, arg): updates an instance
     """
     prompt = "(hbnb) "
     className = ["BaseModel"]
@@ -39,7 +39,9 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """
+        """ Create a new Instance and prints out the id
+            Example:
+                (HBNB) create <class name>
         """
         if not arg:
             print("** class name missing **")
@@ -51,7 +53,9 @@ class HBNBCommand(cmd.Cmd):
             print(obj.id)
 
     def do_show(self, arg):
-        """
+        """ Shows instance property from id
+            Example:
+                (HBNB) show <class name> <instance id>
         """
         args = arg.split()
         if not args:
@@ -69,7 +73,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, arg):
-        """
+        """ Destroys an instance
+            Example:
+                (HBNB) destroy <class name> <instance id>
         """
         args = arg.split()
         if not args:
@@ -88,7 +94,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, arg):
-        """
+        """ Returns all instances
+            Example:
+                (HBNB) all <class name>
         """
         args = arg.split()
         if not args or args[0] in HBNBCommand.className:
@@ -101,7 +109,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, arg):
-        """
+        """ Updates the property of an instance
+            Example:
+                (HBNB) update <class name> <instance id> <property name> <property value>
         """
         args = arg.split()
         if not args:
