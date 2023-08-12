@@ -3,7 +3,7 @@
 """
 import uuid
 from datetime import datetime
-from models import storage
+#from models import storage
 
 
 class BaseModel:
@@ -27,6 +27,7 @@ class BaseModel:
                 *args: None
                 **kwargs (dict): key-value pairs for instance creation
         """
+        from models import storage
         date_format = "%Y-%m-%dT%H:%M:%S.%f"
         if kwargs:
             for key, value in kwargs.items():
@@ -50,6 +51,7 @@ class BaseModel:
         """ Updates self.updated_at to current time
             and saves the changes in the storage object
         """
+        from models import storage
         self.updated_at = datetime.now()
         storage.save()
 
