@@ -35,7 +35,7 @@ All the classes are handled by the `Storage` engine in the `FileStorage` Class.
 
 All the development and testing was runned over an operating system Ubuntu 20.04 LTS using programming language Python 3.8.3. The editors used were VIM 8.1.2269, VSCode 1.6.1 and Atom 1.58.0 . Control version using Git 2.25.1.
 
-##0x02 Projexg Description
+## 0x02 Project Description
 
 This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration...
 
