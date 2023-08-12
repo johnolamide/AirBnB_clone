@@ -17,6 +17,7 @@ class HBNBCommand(cmd.Cmd):
             do_destroy(self, arg): destroys an instance
             do_all(self, arg): return all instances
             do_update(self, arg): updates an instance
+            default(self, line): override the default command
     """
     prompt = "(hbnb) "
 
@@ -153,6 +154,20 @@ class HBNBCommand(cmd.Cmd):
                         obj.save()
             else:
                 print("** no instance found **")
+
+    def default(self, line):
+        """ Override the default command
+            Args:
+                line: command to execute
+        """
+        from models import models
+        args = line.split(".")
+        command = args[1].replace('(', '').replace(')', '')
+        if args[0] in models:
+            if command == "all":
+                self.do_all(args[0])
+        else:
+            super().default(line)
 
 
 if __name__ == '__main__':
