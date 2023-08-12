@@ -2,11 +2,9 @@
 """ Module contains the class definition for the FileStorage Class
 """
 import json
-#from models import models
 
 
 class FileStorage:
-    #from models import models
     """
         FileStorage:
         Attributes:
@@ -67,16 +65,3 @@ class FileStorage:
                         FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
-#    def reload(self):
-#        from models import models
-#        obj_dict = {}
-#        try:
-#            with open(FileStorage.__file_path, 'r') as file:
-#                obj_dict = json.load(file)
-#                for key, value in obj_dict.items():
-#                    className = value["__class__"]
-#                    if className in models:
-#                        print("key: {}. className: {}".format(key, className))
-#                FileStorage.__objects = obj_dict
-#        except FileNotFoundError:
-#            pass
