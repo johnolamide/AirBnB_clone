@@ -177,17 +177,17 @@ class HBNBCommand(cmd.Cmd):
         commands = {
             "all": self.do_all,
             "count": self.count,
-            "show": self.do_show
+            "show": self.do_show,
+            "destroy": self.do_destroy
         }
         command_arg = args[1].replace('(', ' ')\
                              .replace(',', '').replace(')', ' ')\
                              .split()
         command = command_arg[0]
         if command in commands:
-            print(command_arg)
             if command in ["all", "count"]:
                 commands[command](class_name)
-            elif command == "show":
+            elif command in ["show", "destroy"]:
                 commands[command](class_name + " " + command_arg[1])
 
 
