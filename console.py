@@ -188,18 +188,6 @@ class HBNBCommand(cmd.Cmd):
             elif command == "show":
                 commands[command](className + " " + commandArg[1])
 
-#        if className in models:
-#            if command == "all()":
-#                self.do_all(className)
-#            elif command == "count()":
-#                self.count(className)
-#            elif command == "show()":
-#                pass
-#            else:
-#                print(commandArg)
-#        else:
-#            print("** class doesn't exist **")
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
