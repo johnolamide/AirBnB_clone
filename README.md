@@ -262,4 +262,7 @@ e952b772-80a5-41e9-b728-6bc3dc5c21b4
 (hbnb)
 
 ```
+# Author
 
+Olamide Alokan | Email: alokanolamide@gmail.com
+FIkayo Ogundijo | Email: fikayoogundijo@gmail.com
