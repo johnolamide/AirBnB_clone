@@ -166,33 +166,29 @@ class HBNBCommand(cmd.Cmd):
                         if obj.to_dict().get("__class__") == arg]
             print(len(obj_list))
 
-#    def default(self, line):
-#        """ Override the default command
-#            Args:
-#                line: command to execute
-#        """
-#        from models import models
-#        args = line.split(".")
-#        className = args[0]
-#        commands = {
-#            "all": self.do_all
-#            "count": self.count
-#            "show": pass
-#        }
-#        command = args[1]
-# commandArg = command.replace('(', ' ').replace(',', '')
-# .replace(')', ' ').split()
-#        if className in models:
-#            if command == "all()":
-#                self.do_all(className)
-#            elif command == "count()":
-#                self.count(className)
-#            elif command == "show()":
-#                pass
-#            else:
-#                print(commandArg)
-#        else:
-#            print("** class doesn't exist **")
+    def default(self, line):
+        """ Override the default command
+            Args:
+                line: command to execute
+        """
+        from models import models
+        args = line.split(".")
+        class_name = args[0]
+        commands = {
+            "all": self.do_all,
+            "count": self.count,
+            "show": self.do_show
+        }
+        command_arg = args[1].replace('(', ' ')\
+                             .replace(',', '').replace(')', ' ')\
+                             .split()
+        command = command_arg[0]
+        if command in commands:
+            print(command_arg)
+            if command in ["all", "count"]:
+                commands[command](class_name)
+            elif command == "show":
+                commands[command](class_name + " " + command_arg[1])
 
 
 if __name__ == '__main__':
