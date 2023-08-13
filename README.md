@@ -42,7 +42,7 @@ This is the first step towards building your first full web application: the Air
 ## 0x03 Installation
 
 ```bash
-git clone https://github.com/johndiginee/AirBnB_clone.git
+git clone https://github.com/johnolamide/AirBnB_clone.git
 ```
 
 change to the `AirBnb` directory and run the command:
