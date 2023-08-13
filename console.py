@@ -178,7 +178,8 @@ class HBNBCommand(cmd.Cmd):
             "all": self.do_all,
             "count": self.count,
             "show": self.do_show,
-            "destroy": self.do_destroy
+            "destroy": self.do_destroy,
+            "update": self.do_update
         }
         command_arg = args[1].replace('(', ' ')\
                              .replace(',', '').replace(')', ' ')\
@@ -189,6 +190,10 @@ class HBNBCommand(cmd.Cmd):
                 commands[command](class_name)
             elif command in ["show", "destroy"]:
                 commands[command](class_name + " " + command_arg[1])
+            elif command in ["update"]:
+                commands[command](class_name + " " + command_arg[1]
+                                  + " " + command_arg[2] + " "
+                                  + command_arg[3])
 
 
 if __name__ == '__main__':
