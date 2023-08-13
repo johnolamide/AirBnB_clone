@@ -155,6 +155,17 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def count(self, arg):
+        """ Count the number of instances
+        """
+        from models import models
+        from models import storage
+        objs = storage.all()
+        if arg in models:
+            obj_list = [obj.to_dict for obj in objs.values()
+                        if obj.to_dict().get("__class__") == arg]
+            print(len(obj_list))
+
     def default(self, line):
         """ Override the default command
             Args:
@@ -162,12 +173,25 @@ class HBNBCommand(cmd.Cmd):
         """
         from models import models
         args = line.split(".")
-        command = args[1].replace('(', '').replace(')', '')
-        if args[0] in models:
-            if command == "all":
-                self.do_all(args[0])
+        className = args[0]
+        commands = {
+            "all": self.do_all
+            "count": self.count
+            "show": pass
+        }
+        command = args[1]
+        commandArg = command.replace('(', ' ').replace(',', '').replace(')', ' ').split()
+        if className in models:
+            if command == "all()":
+                self.do_all(className)
+            elif command == "count()":
+                self.count(className)
+            elif command == "show()":
+                pass
+            else:
+                print(commandArg)
         else:
-            super().default(line)
+            print("** class doesn't exist **")
 
 
 if __name__ == '__main__':
