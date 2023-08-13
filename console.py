@@ -173,20 +173,22 @@ class HBNBCommand(cmd.Cmd):
         """
         from models import models
         args = line.split(".")
-        className = args[0]
+        class_name = args[0]
         commands = {
             "all": self.do_all,
             "count": self.count,
             "show": self.do_show
         }
-        commandArg = args[1].replace('(', ' ').replace(',', '').replace(')', ' ').split()
-        command = commandArg[0]
+        command_arg = args[1].replace('(', ' ')\
+                             .replace(',', '').replace(')', ' ')\
+                             .split()
+        command = command_arg[0]
         if command in commands:
-            print(commandArg)
+            print(command_arg)
             if command in ["all", "count"]:
-                commands[command](className)
+                commands[command](class_name)
             elif command == "show":
-                commands[command](className + " " + commandArg[1])
+                commands[command](class_name + " " + command_arg[1])
 
 
 if __name__ == '__main__':
