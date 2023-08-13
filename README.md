@@ -264,5 +264,5 @@ e952b772-80a5-41e9-b728-6bc3dc5c21b4
 ```
 # Author
 
-Olamide Alokan | Email: alokanolamide@gmail.com
-FIkayo Ogundijo | Email: fikayoogundijo@gmail.com
+* [Olamide Aloka](https://github.com/johnolamide)
+* [FIkayo Ogundijo](https://github.com/Fikayomi31)
