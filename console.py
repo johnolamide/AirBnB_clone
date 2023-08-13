@@ -175,23 +175,30 @@ class HBNBCommand(cmd.Cmd):
         args = line.split(".")
         className = args[0]
         commands = {
-            "all": self.do_all
-            "count": self.count
-            "show": pass
+            "all": self.do_all,
+            "count": self.count,
+            "show": self.do_show
         }
-        command = args[1]
-        commandArg = command.replace('(', ' ').replace(',', '').replace(')', ' ').split()
-        if className in models:
-            if command == "all()":
-                self.do_all(className)
-            elif command == "count()":
-                self.count(className)
-            elif command == "show()":
-                pass
-            else:
-                print(commandArg)
-        else:
-            print("** class doesn't exist **")
+        commandArg = args[1].replace('(', ' ').replace(',', '').replace(')', ' ').split()
+        command = commandArg[0]
+        if command in commands:
+            print(commandArg)
+            if command in ["all", "count"]:
+                commands[command](className)
+            elif command == "show":
+                commands[command](className + " " + commandArg[1])
+
+#        if className in models:
+#            if command == "all()":
+#                self.do_all(className)
+#            elif command == "count()":
+#                self.count(className)
+#            elif command == "show()":
+#                pass
+#            else:
+#                print(commandArg)
+#        else:
+#            print("** class doesn't exist **")
 
 
 if __name__ == '__main__':
