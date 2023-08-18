@@ -7,7 +7,7 @@
 - [x] `1-index.html`
 
 ## Task 2
-- [ ] `2-index.html` `styles/2-common.css` `styles/2-header.css` `styles/2-footer.css`
+- [x] `2-index.html` `styles/2-common.css` `styles/2-header.css` `styles/2-footer.css`
 
 ## Task 3
 - [ ] `3-index.html` `styles/3-common.css` `styles/3-header.css` `styles/3-footer.css` `images/`
