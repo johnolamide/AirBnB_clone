@@ -1,10 +1,10 @@
 # 0x01 - AirBnB Clone - Web Static
 
 ## Task 0
-- [ ] `0-index.html`
+- [x] `0-index.html`
 
 ## Task 1
-- [ ] `1-index.html`
+- [x] `1-index.html`
 
 ## Task 2
 - [ ] `2-index.html` `styles/2-common.css` `styles/2-header.css` `styles/2-footer.css`
