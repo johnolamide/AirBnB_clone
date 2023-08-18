@@ -2,6 +2,7 @@
 """ Module contains the class definition for the HBNBCommand class
 """
 import cmd
+import json
 
 
 class HBNBCommand(cmd.Cmd):
